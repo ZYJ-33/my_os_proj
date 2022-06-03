@@ -1,0 +1,1 @@
+/home/ubuntu/os_proj/user/target/riscv64gc-unknown-none-elf/release/02write_c: /home/ubuntu/os_proj/user/src/bin/02write_c.rs /home/ubuntu/os_proj/user/src/console.rs /home/ubuntu/os_proj/user/src/lang_items.rs /home/ubuntu/os_proj/user/src/lib.rs /home/ubuntu/os_proj/user/src/syscall.rs

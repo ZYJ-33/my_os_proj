@@ -1,0 +1,273 @@
+Makefile:21: extraneous text after 'else' directive
+Makefile:59: extraneous text after 'else' directive
+warning: unused import: `Location`
+ --> src/lang_items.rs:1:30
+  |
+1 | use core::panic::{PanicInfo, Location};
+  |                              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/lib.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: unreachable expression
+  --> src/lib.rs:48:5
+   |
+47 |     panic!("main not found\n");
+   |     -------------------------- any code following this expression is unreachable
+48 |     1       
+   |     ^ unreachable expression
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: variable `Location` should have a snake case name
+ --> src/lang_items.rs:8:17
+  |
+8 |     if let Some(Location) = panic_info.location()
+  |                 ^^^^^^^^ help: convert the identifier to snake case: `location`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `user_lib` (lib) generated 4 warnings
+    Finished release [optimized] target(s) in 0.01s
+   Compiling kernel v0.1.0 (/home/ubuntu/os_proj/os)
+error[E0432]: unresolved imports `proc::sys_yield`, `proc::sys_exit`
+ --> src/syscall/mod.rs:4:12
+  |
+4 | use proc::{sys_yield, sys_exit};
+  |            ^^^^^^^^^  ^^^^^^^^ no `sys_exit` in `syscall::proc`
+  |            |
+  |            no `sys_yield` in `syscall::proc`
+
+warning: unused import: `crate::println`
+ --> src/lang_items.rs:3:5
+  |
+3 | use crate::println;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: trailing semicolon in macro used in expression position
+  --> src/console.rs:25:66
+   |
+25 |           $crate::console::print(format_args!($fmt $(, $($arg)+)?));
+   |                                                                    ^
+   |
+  ::: src/lang_items.rs:11:13
+   |
+11 | /             print!(
+12 | |             "Panicked at {}:{} {}",
+13 | |             location.file(),
+14 | |             location.line(),
+15 | |             _info.message().unwrap()
+16 | |             )
+   | |_____________- in this macro invocation
+   |
+   = note: `#[warn(semicolon_in_expressions_from_macros)]` on by default
+   = warning: this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
+   = note: for more information, see issue #79813 <https://github.com/rust-lang/rust/issues/79813>
+   = note: macro invocations at the end of a block are treated as expressions
+   = note: to ignore the value produced by the macro, add a semicolon after the invocation of `print`
+   = note: this warning originates in the macro `print` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: type `up_safe_cell` should have an upper camel case name
+ --> src/sync/up.rs:3:12
+  |
+3 | pub struct up_safe_cell<T>
+  |            ^^^^^^^^^^^^ help: convert the identifier to upper camel case: `UpSafeCell`
+  |
+  = note: `#[warn(non_camel_case_types)]` on by default
+
+warning: unused import: `VirPage`
+  --> src/task/task.rs:10:46
+   |
+10 | use crate::mm::{MemorySet, to_prog, PhyPage, VirPage, KERNEL_SPACE};
+   |                                              ^^^^^^^
+
+warning: unused import: `crate::loader::get_app`
+  --> src/task/task.rs:11:5
+   |
+11 | use crate::loader::get_app;
+   |     ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `crate::mm::outputentry`
+  --> src/task/task.rs:13:5
+   |
+13 | use crate::mm::outputentry;
+   |     ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `Scause`
+ --> src/trap/mod.rs:9:9
+  |
+9 |         Scause, Interrupt,
+  |         ^^^^^^
+
+warning: unused imports: `VirPage`, `output_virpage_entry`
+  --> src/trap/mod.rs:13:37
+   |
+13 | use crate::{syscall::sys_call, mm::{output_virpage_entry, VirPage}};
+   |                                     ^^^^^^^^^^^^^^^^^^^^  ^^^^^^^
+
+warning: unused import: `crate::config::*`
+ --> src/loader.rs:1:5
+  |
+1 | use crate::config::*;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unnecessary parentheses around assigned value
+  --> src/mm/frame_allocator.rs:55:25
+   |
+55 |         let mut start = ((ekernel as usize + PAGE_SIZE - 1) & !(PAGE_SIZE - 1));
+   |                         ^                                                     ^
+   |
+   = note: `#[warn(unused_parens)]` on by default
+help: remove these parentheses
+   |
+55 -         let mut start = ((ekernel as usize + PAGE_SIZE - 1) & !(PAGE_SIZE - 1));
+55 +         let mut start = (ekernel as usize + PAGE_SIZE - 1) & !(PAGE_SIZE - 1);
+   | 
+
+warning: unused imports: `PhyAddr`, `StepOne`
+ --> src/mm/pagetable.rs:4:22
+  |
+4 | use super::{VirAddr, PhyAddr, VirPage, PhyPage, StepOne};
+  |                      ^^^^^^^                    ^^^^^^^
+
+warning: unused import: `FRAME_ALLOCATOR`
+ --> src/mm/pagetable.rs:5:51
+  |
+5 | use super::frame_allocator::{alloc, FrameTracker, FRAME_ALLOCATOR};
+  |                                                   ^^^^^^^^^^^^^^^
+
+warning: unused imports: `PAGE_BITS`, `PAGE_SIZE`
+  --> src/mm/pagetable.rs:11:21
+   |
+11 | use crate::config::{PAGE_SIZE, PAGE_BITS};
+   |                     ^^^^^^^^^  ^^^^^^^^^
+
+warning: unused import: `self`
+ --> src/mm/memory_set.rs:7:18
+  |
+7 | use alloc::vec::{self, Vec};
+  |                  ^^^^
+
+warning: unused import: `crate::mm::output_virpage_entry`
+  --> src/mm/memory_set.rs:13:5
+   |
+13 | use crate::mm::output_virpage_entry;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unnecessary parentheses around function argument
+   --> src/mm/memory_set.rs:277:33
+    |
+277 | ...                   (MemPermit::R | MemPermit::X), 
+    |                       ^                           ^
+    |
+help: remove these parentheses
+    |
+277 -                                 (MemPermit::R | MemPermit::X), 
+277 +                                 MemPermit::R | MemPermit::X, 
+    | 
+
+warning: unnecessary parentheses around function argument
+   --> src/mm/memory_set.rs:283:33
+    |
+283 | ...                   (MemPermit::R), 
+    |                       ^            ^
+    |
+help: remove these parentheses
+    |
+283 -                                 (MemPermit::R), 
+283 +                                 MemPermit::R, 
+    | 
+
+warning: unnecessary parentheses around function argument
+   --> src/mm/memory_set.rs:289:33
+    |
+289 | ...                   (MemPermit::R | MemPermit::W), 
+    |                       ^                           ^
+    |
+help: remove these parentheses
+    |
+289 -                                 (MemPermit::R | MemPermit::W), 
+289 +                                 MemPermit::R | MemPermit::W, 
+    | 
+
+warning: unnecessary parentheses around function argument
+   --> src/mm/memory_set.rs:295:33
+    |
+295 | ...                   (MemPermit::R | MemPermit::W), 
+    |                       ^                           ^
+    |
+help: remove these parentheses
+    |
+295 -                                 (MemPermit::R | MemPermit::W), 
+295 +                                 MemPermit::R | MemPermit::W, 
+    | 
+
+warning: unnecessary parentheses around function argument
+   --> src/mm/memory_set.rs:301:33
+    |
+301 | ...                   (MemPermit::R | MemPermit::W), 
+    |                       ^                           ^
+    |
+help: remove these parentheses
+    |
+301 -                                 (MemPermit::R | MemPermit::W), 
+301 +                                 MemPermit::R | MemPermit::W, 
+    | 
+
+warning: unused import: `crate::config::TRAMPOLINE`
+  --> src/mm/mod.rs:12:5
+   |
+12 | use crate::config::TRAMPOLINE;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `core::arch::asm`
+  --> src/main.rs:23:5
+   |
+23 | use core::arch::asm;
+   |     ^^^^^^^^^^^^^^^
+
+warning: unused import: `mm::output_virpage_entry`
+  --> src/main.rs:27:5
+   |
+27 | use mm::output_virpage_entry;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `mm::test`
+  --> src/main.rs:28:5
+   |
+28 | use mm::test;
+   |     ^^^^^^^^
+
+warning: unused import: `TRAMPOLINE`
+  --> src/main.rs:29:14
+   |
+29 | use config::{TRAMPOLINE};
+   |              ^^^^^^^^^^
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/main.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: the feature `global_asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/main.rs:3:12
+  |
+3 | #![feature(global_asm)]
+  |            ^^^^^^^^^^
+
+For more information about this error, try `rustc --explain E0432`.
+warning: `kernel` (bin "kernel") generated 27 warnings
+error: could not compile `kernel` due to previous error; 27 warnings emitted
+make: *** [Makefile:33: kernel] Error 101

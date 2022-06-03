@@ -1,0 +1,285 @@
+    Checking kernel v0.1.0 (/home/ubuntu/os_proj/os)
+warning: unused import: `crate::println`
+ --> src/lang_items.rs:3:5
+  |
+3 | use crate::println;
+  |     ^^^^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: trailing semicolon in macro used in expression position
+  --> src/console.rs:25:66
+   |
+25 |           $crate::console::print(format_args!($fmt $(, $($arg)+)?));
+   |                                                                    ^
+   |
+  ::: src/lang_items.rs:11:13
+   |
+11 | /             print!(
+12 | |             "Panicked at {}:{} {}",
+13 | |             location.file(),
+14 | |             location.line(),
+15 | |             _info.message().unwrap()
+16 | |             )
+   | |_____________- in this macro invocation
+   |
+   = note: `#[warn(semicolon_in_expressions_from_macros)]` on by default
+   = warning: this was previously accepted by the compiler but is being phased out; it will become a hard error in a future release!
+   = note: for more information, see issue #79813 <https://github.com/rust-lang/rust/issues/79813>
+   = note: macro invocations at the end of a block are treated as expressions
+   = note: to ignore the value produced by the macro, add a semicolon after the invocation of `print`
+   = note: this warning originates in the macro `print` (in Nightly builds, run with -Z macro-backtrace for more info)
+
+warning: type `up_safe_cell` should have an upper camel case name
+ --> src/sync/up.rs:3:12
+  |
+3 | pub struct up_safe_cell<T>
+  |            ^^^^^^^^^^^^ help: convert the identifier to upper camel case: `UpSafeCell`
+  |
+  = note: `#[warn(non_camel_case_types)]` on by default
+
+warning: unused import: `crate::loader::get_app`
+  --> src/task/task.rs:10:5
+   |
+10 | use crate::loader::get_app;
+   |     ^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `Scause`
+ --> src/trap/mod.rs:9:9
+  |
+9 |         Scause, Interrupt,
+  |         ^^^^^^
+
+warning: unused import: `crate::config::*`
+ --> src/loader.rs:1:5
+  |
+1 | use crate::config::*;
+  |     ^^^^^^^^^^^^^^^^
+
+warning: unnecessary parentheses around assigned value
+  --> src/mm/frame_allocator.rs:55:25
+   |
+55 |         let mut start = ((ekernel as usize + PAGE_SIZE - 1) & !(PAGE_SIZE - 1));
+   |                         ^                                                     ^
+   |
+   = note: `#[warn(unused_parens)]` on by default
+help: remove these parentheses
+   |
+55 -         let mut start = ((ekernel as usize + PAGE_SIZE - 1) & !(PAGE_SIZE - 1));
+55 +         let mut start = (ekernel as usize + PAGE_SIZE - 1) & !(PAGE_SIZE - 1);
+   | 
+
+warning: unused import: `PhyAddr`
+ --> src/mm/pagetable.rs:4:22
+  |
+4 | use super::{VirAddr, PhyAddr, VirPage, PhyPage, StepOne};
+  |                      ^^^^^^^
+
+warning: unused import: `FRAME_ALLOCATOR`
+ --> src/mm/pagetable.rs:5:51
+  |
+5 | use super::frame_allocator::{alloc, FrameTracker, FRAME_ALLOCATOR};
+  |                                                   ^^^^^^^^^^^^^^^
+
+warning: unused imports: `PAGE_BITS`, `PAGE_SIZE`
+  --> src/mm/pagetable.rs:11:21
+   |
+11 | use crate::config::{PAGE_SIZE, PAGE_BITS};
+   |                     ^^^^^^^^^  ^^^^^^^^^
+
+warning: unused import: `self`
+ --> src/mm/memory_set.rs:7:18
+  |
+7 | use alloc::vec::{self, Vec};
+  |                  ^^^^
+
+warning: unnecessary parentheses around function argument
+   --> src/mm/memory_set.rs:275:33
+    |
+275 | ...                   (MemPermit::R | MemPermit::X), 
+    |                       ^                           ^
+    |
+help: remove these parentheses
+    |
+275 -                                 (MemPermit::R | MemPermit::X), 
+275 +                                 MemPermit::R | MemPermit::X, 
+    | 
+
+warning: unnecessary parentheses around function argument
+   --> src/mm/memory_set.rs:281:33
+    |
+281 | ...                   (MemPermit::R), 
+    |                       ^            ^
+    |
+help: remove these parentheses
+    |
+281 -                                 (MemPermit::R), 
+281 +                                 MemPermit::R, 
+    | 
+
+warning: unnecessary parentheses around function argument
+   --> src/mm/memory_set.rs:287:33
+    |
+287 | ...                   (MemPermit::R | MemPermit::W), 
+    |                       ^                           ^
+    |
+help: remove these parentheses
+    |
+287 -                                 (MemPermit::R | MemPermit::W), 
+287 +                                 MemPermit::R | MemPermit::W, 
+    | 
+
+warning: unnecessary parentheses around function argument
+   --> src/mm/memory_set.rs:293:33
+    |
+293 | ...                   (MemPermit::R | MemPermit::W), 
+    |                       ^                           ^
+    |
+help: remove these parentheses
+    |
+293 -                                 (MemPermit::R | MemPermit::W), 
+293 +                                 MemPermit::R | MemPermit::W, 
+    | 
+
+warning: unnecessary parentheses around function argument
+   --> src/mm/memory_set.rs:299:33
+    |
+299 | ...                   (MemPermit::R | MemPermit::W), 
+    |                       ^                           ^
+    |
+help: remove these parentheses
+    |
+299 -                                 (MemPermit::R | MemPermit::W), 
+299 +                                 MemPermit::R | MemPermit::W, 
+    | 
+
+warning: unused import: `mm::test`
+  --> src/main.rs:26:5
+   |
+26 | use mm::test;
+   |     ^^^^^^^^
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/main.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: the feature `global_asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/main.rs:3:12
+  |
+3 | #![feature(global_asm)]
+  |            ^^^^^^^^^^
+
+warning: unused variable: `user_stack_va`
+   --> src/task/task.rs:195:9
+    |
+195 |     let user_stack_va: usize;
+    |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_user_stack_va`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: variable does not need to be mutable
+   --> src/task/task.rs:244:13
+    |
+244 |         let mut tasks = self.tasks.access();
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: variable does not need to be mutable
+  --> src/trap/mod.rs:57:9
+   |
+57 |     let mut ss = sstatus::Sstatus::from(ctx.sstatus);
+   |         ----^^
+   |         |
+   |         help: remove this `mut`
+
+warning: variable does not need to be mutable
+  --> src/mm/frame_allocator.rs:55:13
+   |
+55 |         let mut start = ((ekernel as usize + PAGE_SIZE - 1) & !(PAGE_SIZE - 1));
+   |             ----^^^^^
+   |             |
+   |             help: remove this `mut`
+
+warning: variable does not need to be mutable
+  --> src/mm/frame_allocator.rs:57:13
+   |
+57 |         let mut v = Vec::new();
+   |             ----^
+   |             |
+   |             help: remove this `mut`
+
+warning: variable does not need to be mutable
+   --> src/task/task.rs:147:8
+    |
+147 |    let mut tasks : [Task; APP_MAX_COUNT];
+    |        ----^^^^^
+    |        |
+    |        help: remove this `mut`
+
+error[E0381]: borrow of possibly-uninitialized variable: `tasks`
+   --> src/task/task.rs:149:20
+    |
+149 |    for (i,task) in tasks.iter_mut().enumerate()
+    |                    ^^^^^^^^^^^^^^^^ use of possibly-uninitialized `tasks`
+
+error[E0503]: cannot use `tasks` because it was mutably borrowed
+   --> src/task/task.rs:153:13
+    |
+149 |    for (i,task) in tasks.iter_mut().enumerate()
+    |                    ----------------------------
+    |                    |
+    |                    borrow of `tasks` occurs here
+    |                    borrow later used here
+...
+153 |             tasks[i] = Task::new_task();
+    |             ^^^^^^^^ use of borrowed `tasks`
+
+error[E0506]: cannot assign to `tasks[_]` because it is borrowed
+   --> src/task/task.rs:153:13
+    |
+149 |    for (i,task) in tasks.iter_mut().enumerate()
+    |                    ----------------------------
+    |                    |
+    |                    borrow of `tasks[_]` occurs here
+    |                    borrow later used here
+...
+153 |             tasks[i] = Task::new_task();
+    |             ^^^^^^^^ assignment to borrowed `tasks[_]` occurs here
+
+warning: unnecessary `unsafe` block
+  --> src/loader.rs:19:5
+   |
+19 |     unsafe
+   |     ^^^^^^ unnecessary `unsafe` block
+   |
+   = note: `#[warn(unused_unsafe)]` on by default
+
+warning: unnecessary `unsafe` block
+  --> src/loader.rs:34:5
+   |
+34 |     unsafe
+   |     ^^^^^^ unnecessary `unsafe` block
+
+warning: unnecessary `unsafe` block
+  --> src/loader.rs:39:5
+   |
+39 |     unsafe
+   |     ^^^^^^ unnecessary `unsafe` block
+
+warning: unnecessary `unsafe` block
+ --> src/timer.rs:9:5
+  |
+9 |     unsafe
+  |     ^^^^^^ unnecessary `unsafe` block
+
+Some errors have detailed explanations: E0381, E0503, E0506.
+For more information about an error, try `rustc --explain E0381`.
+warning: `kernel` (bin "kernel") generated 29 warnings
+error: could not compile `kernel` due to 3 previous errors; 29 warnings emitted

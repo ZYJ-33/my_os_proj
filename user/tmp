@@ -1,0 +1,333 @@
+   Compiling user_lib v0.1.0 (/home/ubuntu/os_proj/user)
+warning: unused import: `Location`
+ --> src/lang_items.rs:1:30
+  |
+1 | use core::panic::{PanicInfo, Location};
+  |                              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/lib.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: unreachable expression
+  --> src/lib.rs:48:5
+   |
+47 |     panic!("main not found\n");
+   |     -------------------------- any code following this expression is unreachable
+48 |     1       
+   |     ^ unreachable expression
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: variable `Location` should have a snake case name
+ --> src/lang_items.rs:8:17
+  |
+8 |     if let Some(Location) = panic_info.location()
+  |                 ^^^^^^^^ help: convert the identifier to snake case: `location`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `user_lib` (lib) generated 4 warnings
+    Finished release [optimized] target(s) in 0.29s
+warning: unused import: `Location`
+ --> src/lang_items.rs:1:30
+  |
+1 | use core::panic::{PanicInfo, Location};
+  |                              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/lib.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: unreachable expression
+  --> src/lib.rs:48:5
+   |
+47 |     panic!("main not found\n");
+   |     -------------------------- any code following this expression is unreachable
+48 |     1       
+   |     ^ unreachable expression
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: variable `Location` should have a snake case name
+ --> src/lang_items.rs:8:17
+  |
+8 |     if let Some(Location) = panic_info.location()
+  |                 ^^^^^^^^ help: convert the identifier to snake case: `location`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `user_lib` (lib) generated 4 warnings
+   Compiling user_lib v0.1.0 (/home/ubuntu/os_proj/user)
+    Finished release [optimized] target(s) in 0.14s
+warning: unused import: `Location`
+ --> src/lang_items.rs:1:30
+  |
+1 | use core::panic::{PanicInfo, Location};
+  |                              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/lib.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: unreachable expression
+  --> src/lib.rs:48:5
+   |
+47 |     panic!("main not found\n");
+   |     -------------------------- any code following this expression is unreachable
+48 |     1       
+   |     ^ unreachable expression
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: variable `Location` should have a snake case name
+ --> src/lang_items.rs:8:17
+  |
+8 |     if let Some(Location) = panic_info.location()
+  |                 ^^^^^^^^ help: convert the identifier to snake case: `location`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `user_lib` (lib) generated 4 warnings
+   Compiling user_lib v0.1.0 (/home/ubuntu/os_proj/user)
+    Finished release [optimized] target(s) in 0.14s
+warning: unused import: `Location`
+ --> src/lang_items.rs:1:30
+  |
+1 | use core::panic::{PanicInfo, Location};
+  |                              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/lib.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: unreachable expression
+  --> src/lib.rs:48:5
+   |
+47 |     panic!("main not found\n");
+   |     -------------------------- any code following this expression is unreachable
+48 |     1       
+   |     ^ unreachable expression
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: variable `Location` should have a snake case name
+ --> src/lang_items.rs:8:17
+  |
+8 |     if let Some(Location) = panic_info.location()
+  |                 ^^^^^^^^ help: convert the identifier to snake case: `location`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `user_lib` (lib) generated 4 warnings
+   Compiling user_lib v0.1.0 (/home/ubuntu/os_proj/user)
+    Finished release [optimized] target(s) in 0.12s
+warning: unused import: `Location`
+ --> src/lang_items.rs:1:30
+  |
+1 | use core::panic::{PanicInfo, Location};
+  |                              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/lib.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: unreachable expression
+  --> src/lib.rs:48:5
+   |
+47 |     panic!("main not found\n");
+   |     -------------------------- any code following this expression is unreachable
+48 |     1       
+   |     ^ unreachable expression
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: variable `Location` should have a snake case name
+ --> src/lang_items.rs:8:17
+  |
+8 |     if let Some(Location) = panic_info.location()
+  |                 ^^^^^^^^ help: convert the identifier to snake case: `location`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `user_lib` (lib) generated 4 warnings
+   Compiling user_lib v0.1.0 (/home/ubuntu/os_proj/user)
+    Finished release [optimized] target(s) in 0.12s
+warning: unused import: `Location`
+ --> src/lang_items.rs:1:30
+  |
+1 | use core::panic::{PanicInfo, Location};
+  |                              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/lib.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: unreachable expression
+  --> src/lib.rs:48:5
+   |
+47 |     panic!("main not found\n");
+   |     -------------------------- any code following this expression is unreachable
+48 |     1       
+   |     ^ unreachable expression
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: variable `Location` should have a snake case name
+ --> src/lang_items.rs:8:17
+  |
+8 |     if let Some(Location) = panic_info.location()
+  |                 ^^^^^^^^ help: convert the identifier to snake case: `location`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `user_lib` (lib) generated 4 warnings
+   Compiling user_lib v0.1.0 (/home/ubuntu/os_proj/user)
+    Finished release [optimized] target(s) in 0.14s
+warning: unused import: `Location`
+ --> src/lang_items.rs:1:30
+  |
+1 | use core::panic::{PanicInfo, Location};
+  |                              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/lib.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: unreachable expression
+  --> src/lib.rs:48:5
+   |
+47 |     panic!("main not found\n");
+   |     -------------------------- any code following this expression is unreachable
+48 |     1       
+   |     ^ unreachable expression
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: variable `Location` should have a snake case name
+ --> src/lang_items.rs:8:17
+  |
+8 |     if let Some(Location) = panic_info.location()
+  |                 ^^^^^^^^ help: convert the identifier to snake case: `location`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `user_lib` (lib) generated 4 warnings
+   Compiling user_lib v0.1.0 (/home/ubuntu/os_proj/user)
+    Finished release [optimized] target(s) in 0.12s
+warning: unused import: `Location`
+ --> src/lang_items.rs:1:30
+  |
+1 | use core::panic::{PanicInfo, Location};
+  |                              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/lib.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: unreachable expression
+  --> src/lib.rs:48:5
+   |
+47 |     panic!("main not found\n");
+   |     -------------------------- any code following this expression is unreachable
+48 |     1       
+   |     ^ unreachable expression
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: variable `Location` should have a snake case name
+ --> src/lang_items.rs:8:17
+  |
+8 |     if let Some(Location) = panic_info.location()
+  |                 ^^^^^^^^ help: convert the identifier to snake case: `location`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `user_lib` (lib) generated 4 warnings
+   Compiling user_lib v0.1.0 (/home/ubuntu/os_proj/user)
+    Finished release [optimized] target(s) in 0.13s
+warning: unused import: `Location`
+ --> src/lang_items.rs:1:30
+  |
+1 | use core::panic::{PanicInfo, Location};
+  |                              ^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: the feature `asm` has been stable since 1.59.0 and no longer requires an attribute to enable
+ --> src/lib.rs:4:12
+  |
+4 | #![feature(asm)]
+  |            ^^^
+  |
+  = note: `#[warn(stable_features)]` on by default
+
+warning: unreachable expression
+  --> src/lib.rs:48:5
+   |
+47 |     panic!("main not found\n");
+   |     -------------------------- any code following this expression is unreachable
+48 |     1       
+   |     ^ unreachable expression
+   |
+   = note: `#[warn(unreachable_code)]` on by default
+
+warning: variable `Location` should have a snake case name
+ --> src/lang_items.rs:8:17
+  |
+8 |     if let Some(Location) = panic_info.location()
+  |                 ^^^^^^^^ help: convert the identifier to snake case: `location`
+  |
+  = note: `#[warn(non_snake_case)]` on by default
+
+warning: `user_lib` (lib) generated 4 warnings
+   Compiling user_lib v0.1.0 (/home/ubuntu/os_proj/user)
+    Finished release [optimized] target(s) in 0.12s
