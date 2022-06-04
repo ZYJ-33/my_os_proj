@@ -48,12 +48,11 @@ pub fn before_trapret()
         )
     };
     let satp = get_current_task_satp();
-    let root = get_current_task_pgt();
     
     unsafe
     {
         asm!("fence.i");
-        trapret_func(TRAPFRAME, get_current_task_satp())
+        trapret_func(TRAPFRAME, satp);
     }
 }
 

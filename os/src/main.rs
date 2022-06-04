@@ -4,6 +4,12 @@
 #![feature(asm)]
 #![feature(panic_info_message)]
 #![feature(alloc_error_handler)]
+#[cfg(feature = "k210")]
+#[path = "board/k210.rs"]
+mod board;
+#[cfg(not(any(feature = "k210")))]
+#[path = "board/qemu.rs"]
+mod board;
 
 mod lang_items;
 mod sbi;
@@ -26,7 +32,9 @@ use task::run;
 use mm::init as mem_init;
 use mm::output_virpage_entry;
 use mm::test;
+use task::TRAP_FRAMES;
 use config::{TRAMPOLINE};
+
 extern "C"
 {
     fn trampoline();
@@ -57,6 +65,11 @@ pub fn rust_main() -> !
     println!("hello world");
     mem_init();
     println!("back to world");
+    unsafe
+    {
+        let tf = (TRAP_FRAMES[0].as_ptr() as usize);
+        println!("{:x}", tf);
+    }
     
     run();
 }

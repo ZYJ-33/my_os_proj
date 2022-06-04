@@ -265,6 +265,8 @@ pub fn kernel_mem_init()
         fn erodata();
         fn sdata();
         fn edata();
+        fn strapframe();
+        fn etrapframe();
         fn sbss();
         fn ebss();
         fn ekernel();
@@ -289,6 +291,12 @@ pub fn kernel_mem_init()
                                 (MemPermit::R | MemPermit::W), 
                                 MapType::Indentical);
 
+   output("trapframe", strapframe as usize, etrapframe as usize);   
+   let trapframe_area = MemArea::new(usize::into(strapframe as usize),
+                                usize::into(etrapframe as usize), 
+                                (MemPermit::R | MemPermit::W), 
+                                MapType::Indentical);
+
    output("bss", sbss as usize, ebss as usize);   
    let bss_area = MemArea::new(usize::into(sbss as usize),
                                 usize::into(ebss as usize), 
@@ -307,6 +315,8 @@ pub fn kernel_mem_init()
     kernel.push_area(rodata_area, None);
     println!("putting data");
     kernel.push_area(data_area, None);
+    println!("putting trapframe");
+    kernel.push_area(trapframe_area, None);
     println!("putting bss");
     kernel.push_area(bss_area, None);
     println!("putting mem");

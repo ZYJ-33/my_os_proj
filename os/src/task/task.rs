@@ -23,6 +23,7 @@ pub enum TaskStatus
     Exited,
 }
 
+#[repr(align(4096))]
 #[derive(Copy, Clone)]
 pub struct KernelStack
 {
@@ -37,6 +38,7 @@ impl KernelStack
     }
 }
 
+#[repr(align(4096))]
 #[derive(Copy, Clone)]
 pub struct UserStack
 {
@@ -69,7 +71,9 @@ static mut KERNEL_STACKS : [KernelStack; APP_MAX_COUNT] =
     APP_MAX_COUNT
 ];
 
-static mut TRAP_FRAMES : [[u8;PAGE_SIZE]; APP_MAX_COUNT] = 
+#[no_mangle]
+#[link_section = ".trapframe"]
+pub static mut TRAP_FRAMES : [[u8;PAGE_SIZE]; APP_MAX_COUNT] = 
 [
     [0;PAGE_SIZE];
     APP_MAX_COUNT
@@ -203,7 +207,10 @@ pub fn init_task(i:usize, task: &mut Task)
 
     let context_ptr = unsafe { (TRAP_FRAMES[i].as_ptr()) as usize as *mut Context };
     let elf = loader::get_app(i);
-    
+    unsafe
+    {
+    println!("{:x}", TRAP_FRAMES[i].as_ptr() as usize);
+    }
     let entry_point: usize;
     let mut mem_set: MemorySet;
     (entry_point, mem_set) = to_prog(elf);
@@ -218,6 +225,7 @@ pub fn init_task(i:usize, task: &mut Task)
     {
         *(context_ptr) = ctx;
     }
+    
 
     task.ctx.ra = kernel_ra;
     task.ctx.sp = kernel_stack_top as usize;
@@ -225,6 +233,11 @@ pub fn init_task(i:usize, task: &mut Task)
     task.kernelstack_top = PhyPage::from(kernel_stack_top >> PAGE_BITS);
     task.trapframe = PhyPage::from(unsafe{ ((&TRAP_FRAMES[i]).as_ptr() as usize )>>PAGE_BITS});
     task.status = TaskStatus::Ready;
+
+    unsafe
+    {
+        println!("{:?}", (TRAP_FRAMES[i].as_ptr() as usize as *const Context).as_ref());
+    }
     
     MEM_SETS.access().push(mem_set);
 }
